@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력양식 및 폼태그</title>
+</head>
+<body>
+    <h1>입력 양식 태그</h1>
+    <h2>input 태그</h2>
+    <p>사용자로부터 값을 입력받을 수 있는 텍스트 상자 및 체크박스, 라디오버튼 등을 만들 수 있음</p> <br>
+
+    아이디 : <input type="text"> <br>
+    비밀번호 : <input type="text"> <br>
+    성별 : <input type="radio">남 &emsp; <input type="radio">여 <br>
+    <input type="submit" value="회원가입">
+
+    <br><br><br>
+    <hr>
+
+    <h1>폼 태그</h1>
+    <p>
+        form 태그 내에 submit버튼을 클릭 시 해당 form안의 작성된 내용 <br>
+        즉, 사용자 입력한 값들을 서버로 전송하면서 요펑하는 욕할 수행 <br><br>
+
+        &lt;form action="요청을 처리할 페이지" method="" &gt; <br><br>
+
+        * action 속성 : 해당 form에 사용자가 입력한 값들을 전달하면서 요청할 서버의 경로 <br>
+        * method 속성 : 요청 전송 방식을 지정하는 속성 (get(기본값) | post) <br>
+            > get : 요청 시 사용자가 입력한 값들이 url에 노출되는 방식 <br>
+            > post : 요청 시 사용자가 입력한 값들이 url에 노출되지 않는 방식 <br>
+
+        form내의 submit 버튼 클릭 시 action에서 지정한 서버로 사용자가 입력한 값들이 전송 <br>
+        사용자가 넣은 값은 항상 key=value의 세트로 전송
+    </p>
+
+    <form action="search.jsp" method="get">
+        검색어 : <input name="keyword"> <br>
+        <input type="submit" value="검색">
+    </form>
+
+    <h3>fieldset : 그룹을 묶는 태그(기본값으로 테두리 존재) <br>
+        legend : 해당 그룹의 제목을 붙이는 태그
+    </h3>
+
+    <form action="test.jsp">
+        <fieldset>
+            입력1 : <input name="text1"> <br>
+            입력2 : <input name="text2">
+        </fieldset>
+        
+        <fieldset>
+            다른입력a : <input name="other1"> <br>
+            다른입력b : <input name="other2">
+        </fieldset>
+    </form>
+
+    <br>
+    <hr>
+
+    <!--
+        속성들
+         - placeholder : 예문을 보여주는 글씨
+         - maxlength : 최대 문자의 길이 지정
+         - required : 이 칸을 채우지 않으면 서버로 전송 불가(오류)
+    -->
+    <h2>텍스트와 관련된 input 태그의 타입</h2>
+    <form action="test.jsp">
+        <h3>type="text"</h3>
+        <p>- 한줄짜리 테스트를 입력할 수 있는 텍스트 상자(기본값)</p>
+        아이디 : <input name="userId" placeholder="아이디 입력" maxlength="12" required size="40"> <br>
+
+        <h3>type="password"</h3>
+        <p>- 비밀번호를 입력할 수 있는 텍스트 상자</p>
+        비밀번호 : <input type="password" name="userPW" placeholder="영문, 숫자, 특수문자만 가능" maxlength="12" required size="40"> <br>
+
+        <h3>type="search | url | email | tel"</h3>
+        <p>- 겉모습은 일반 텍스트 상자와 유사하지만 각각의 정보에 맞게 세분화된 기능 제공</p>
+        검색 : <input type="search" name="q"> <br>
+
+        홈페이지 : <input type="url" name="homepage"> <br>
+
+        이메일 : <input type="email" name="email"> <br>
+
+        전화번호 : <input type="tel" name="tel"> <br>
+
+        <input type="submit">
+    </form>
+
+    <br>
+    <hr>
+
+    <h2>textarea 태그</h2>
+    <p>- 텍스트 상자로 여러 줄을 입력할 수 있음</p>
+    <!--
+        cols : 글자
+        rows : 몇 행
+    -->
+    <form action="test.do" method="post">
+        제목 : <input name="title"> <br>
+        내용 : <textarea name="content" cols="35" rows="10"></textarea> <br>
+
+        <input type="submit">
+    </form>
+
+    <br>
+    <hr>
+
+    <h2>숫자와 관련된 input 태그</h2>
+    <form action="test.do">
+        <h3>type="number"</h3>
+        <p>- 숫자만 입력가능 <br>
+           - 스핀박스가 표시
+        </p>
+        수량 : <input type="number" name="amount" min="0" max="100" step="5" value="0"> <br>
+
+        <h3>type="range"</h3>
+        <p>- 슬라이드바를 통해 숫자 지정</p>
+        점수 : <input type="range" min="0" max="100" step="10">
+
+        <input type="submit">
+    </form>
+
+    <h2>날짜 및 시간</h2>
+    <form action="test.do">
+        <h3>type="date | month | week | datetime-local"</h3>
+        date : <input type="date" name="dateInput"> <br> <!-- 년, 월, 일 -->
+        month : <input type="month" name="monthInput"> <br> <!-- 년, 월 -->
+        week : <input type="week" name="weekInput"> <br> <!-- 1년중 몇째 주-->
+        time : <input type="time" name="timeInput"> <br> <!-- 오전|오후 시분 -->
+        datetime-local : <input type="datetime-local" name="dtlInput"> <br> <!-- 년, 월, 일, 오전|오후, 시분 -->
+
+        <input type="submit" value="서버로 전송"> <br>
+        <input type="reset">
+    </form>
+
+    <br>
+    <hr>
+
+    <h2>라디오버튼과 체크박스</h2>
+    <form action="test.do">
+        <h3>라디오버튼(type=radio)</h3>
+        <p>
+            - 여러 개의 값들 중 오로지 1개만 선택할 때 <br>
+            - 서버로 value의 값이 전송됨 <br>
+            - ** 중요 : 속성 name의 값이 같아야 됨
+        </p>
+        성별 : 
+        <input type="radio" name="gender" value="M"> 남자 &emsp;
+        <input type="radio" name="gender" value="F"> 여자 &emsp;
+
+
+
+
+    </form>
+
+</body>
+</html>
