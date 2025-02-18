@@ -1,0 +1,152 @@
+/* ========================= 1. 속성 선택자 ========================= */
+/* div 요소들 중 name속성값이 name1과 "일치"하는 요소 선택 */
+div[name=name1] {
+    background-color: darkgray;
+}
+
+/* div 요소들 중 name속성값이 name1 단어가 "포함"되어있는 요소 선택 */
+div[name~=name1] {
+    color: palevioletred;
+}
+
+/* div 요소들 중 name속성값이 na로 "시작"하는 요소 선택 */
+div[name^=na] {
+    background-color: aquamarine;
+    }
+
+/* div 요소들 중 class속성값이 ss로 "끝"나는 요소 선택 */
+div[class$=ss] {
+    color: dodgerblue;
+}
+
+/* div 요소들 중 class속성값이 i가 "포함"되어 있는 요소 선택 */
+div[class*=i] {
+    color: red;
+    background-color: lightpink;
+}
+
+/* class 속성값이 div-class인 요소들 중에 name 속성값에 단어로 name3이 포함되어 있는 요소 선택 */
+.div-class[name~=name3] {
+    background-color: hotpink;
+}
+
+/* ========================= 2. 자손/후손 선택자 ========================= */
+/* #test1의 자손들 모두 선택 */
+#test1>* {
+    background-color: lightcyan;
+}
+/* #test1의 자손들 중 h4요소만 선택 */
+#test1>h4 {
+    background-color: lightsteelblue;
+}
+
+/* test1의 자손들 중 ul의 자손둘 중 li요소만 선택*/
+#test1>ul>li {
+    color: rebeccapurple;
+}
+
+/* test1의 후손들 중 li요소만 선택*/
+#test1 li {
+    background-color: thistle;
+}
+
+/* ========================= 3. 동위 선택자 ========================= */
+/* #test2의 바로 뒤에 나오는 div 하나만 선택 */
+#test2+div {
+    background-color: palegoldenrod;
+}
+
+/* 선택 안됨 (바로 뒤 요소가 ul이 아니기 때문) */
+#test2+ul {
+    background-color: darkkhaki;
+}
+
+/* #test2의 뒤의 형제들 중 div는 모두 다 */
+/* #test2~div {
+    background-color: lightgoldenrodyellow;
+} */
+#test2~ul {
+    background-color: bisque;
+}
+
+#test2~ul {
+    color: green;
+}
+
+/* ========================= 4. 반응 선택자 ========================= */
+.area {
+    background-color: darkolivegreen;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+#active-test:active {
+    background-color: chartreuse;
+    color: brown;
+}
+
+#hover-test:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+#link:link { color: mediumspringgreen; }
+
+#link:hover { color: olivedrab; }
+
+#link:active { color: palegreen; }
+
+#link:visited { color: seagreen; }
+
+/* ========================= 5. 상태 선택자 ========================= */
+input[type=checkbox]:checked{
+    width: 30px;
+    height: 30px;
+}
+
+input[type=checkbox]:checked+label {
+    font-size: 30px;
+}
+
+input[name^=user]:focus {
+    background-color: orange;
+}
+
+button:enabled {
+    background-color: lightsalmon;
+}
+
+button:disabled {
+    color: darkgoldenrod;
+}
+
+/* ========================= 6. 일반 구조 선택자 ========================= */
+#spring :first-child { background-color: lightgrey; }
+/* #spring>:first-child { background-color: lightgrey; } */
+
+#spring :last-child { background-color: lightgray; }
+
+#spring :nth-child(2) { background-color: lightskyblue;}
+
+#spring :nth-child(2n) { color: darkblue} /* 짝수번째 */
+
+#spring :nth-child(2n+1) { color: dimgrey;} /* 홀수번째 */
+
+/* ========================= 7. 형제 구조 선택자 ========================= */
+#summer p:first-of-type { background-color: rgb(174, 151, 220); }
+
+#summer p:last-of-type { background-color: rgb(129, 121, 170); }
+
+#summer p:nth-of-type(2) {background-color: rgb(188, 112, 238); }
+
+#summer p:nth-last-of-type(2n) { color: rgb(152, 139, 238); }
+
+#summer p:nth-last-of-type(2n+1) { color: rgb(194, 115, 234); }
+
+/* ========================= 8. 부정 선택자 ========================= */
+#fall :not(p:first-of-type) { color:indianred; }
+
+
+
+
