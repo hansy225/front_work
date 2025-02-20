@@ -1,0 +1,18 @@
+* {
+    margin: 0 auto;
+}
+
+header {
+    background-color: indigo;
+    text-align: center;
+}
+
+header>h1 {
+    color: white;
+}
+
+footer {
+    background-color: indigo;
+    text-align: center;
+    color: white;
+}
