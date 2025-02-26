@@ -7,7 +7,7 @@
     <style>
         .area {
             border: 1px solid;
-            width: 300px;
+            width: 400px;
             padding: 5px;
         }
     </style>
@@ -55,6 +55,20 @@
             }
 
             // ES6
+            let p2 = {
+                name,
+                age,
+                fun1() {
+                    const result = this.name.toUpperCase();
+                    div1.innerHTML += result + '!!!<br>';
+                },
+                setAge(fAge) {
+                    this.age = fAge;
+                    div1.innerHTML += `나이 : ${this.age}<br>`;
+                }
+            };
+            p2.fun1();
+            p2.setAge(35);
         }
     </script>
 
