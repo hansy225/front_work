@@ -1,0 +1,173 @@
+header {
+    width: 100%;
+    max-width: 1000px;
+    min-width: none;
+    margin: 0 auto;
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo {
+    width: 200px;
+    height: 50px;
+    float: left;
+    list-style: none;
+    cursor: pointer;
+    margin-top: 5px;
+}
+.logo img {
+    width: 120px;
+    height: 50px;
+    margin-top: 15px;
+}
+
+
+/* .nav {
+    list-style: none;
+    padding: 0;
+    text-align: right;
+    justify-content: center;
+} */
+.nav li {
+    display: inline-block;
+    position: relative;
+    font-size: 13px;
+}
+.nav>li {
+    float: right;
+    width: 200px;
+    text-align: center;
+    position: relative;
+    padding: 5px 0;
+}
+.nav a {
+    text-decoration: none;
+    display: block;
+    width: 200px;
+    height: 50px;
+    color: black;
+    background-color: white;
+    text-align: center;
+    line-height: 50px;
+}
+.nav li:hover {
+    display: block;
+    background-color: rgb(4, 4, 81); 
+    color:white;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+
+}
+
+
+#imgslide {
+    width: 1000px;
+    height: 362px;
+    position: relative;
+}
+#imgslide>img {
+    position: absolute;
+}
+
+
+h2,p,th,td {
+    color: #666666;
+}
+.notice {
+    float: left;
+    width: 49%;
+    text-align: center;
+}
+.notice h2 {
+    text-align: center;
+}
+.table {
+    border-collapse: collapse;
+    font-size:0.9em;
+    color: #666666;
+}
+.table tr>th {
+    padding: 5px 0;
+}
+.table tr>td {
+    padding: 5px;
+    text-align: left;
+}
+.table tr:nth-child(2n) {
+    background-color: rgba(153,153,153,0.5)
+}
+
+
+
+.partner {
+    float: right;
+    width: 49%;
+    text-align: center;
+}
+.partner_info{
+    margin-top: 20px;
+    text-align: center;
+}
+.partner_info>img {
+    width: 450px;
+    height: 155px;
+}
+
+
+.icon {
+    clear: both;
+    text-align: center;
+    display: flex;
+}
+.imgbtn {
+    width: 160px;
+    padding: 30px;
+}
+.imgbtn>img {
+    height: 130px;
+}
+.imgbtn button {
+    margin-top: 5px;
+    padding: 10px;
+    background-color: #666666;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+}
+button {
+    cursor: pointer;
+}
+
+
+footer {
+    width: auto;
+    font-size: 0.9em;
+    height: 80px;
+    padding: 20px 20px;
+    background-color: #4298cc;
+    overflow: hidden;
+}
+footer span {
+    color: #FFFFFF;
+}
+footer p {
+    margin-top: 5px;
+    color:rgb(235, 235, 235);
+}
+
+
+
+
+
